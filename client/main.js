@@ -18,8 +18,9 @@ Template.favicon.events({
     const url = event.target.url.value
     event.preventDefault()
     Meteor.call('getFavicon',url, (err, result) => {
+      console.log(result)
       if (err || !result || !result.content) {
-        Session.set('faviconUrl', 'Error finding favicon, website may not have a url. Please try another URL preceded with http://www.')
+        Session.set('faviconUrl', 'Error finding favicon, website may not have a url. Please try another URL preceded with http://')
       } else {
         Session.set('faviconUrl', result.content)
       }
