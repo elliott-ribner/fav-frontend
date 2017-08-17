@@ -1,0 +1,23 @@
+<head>
+  <title>fetchfav-meteor</title>
+</head>
+
+<body>
+  <h1>Welcome to The Favicon Fetcher!</h1>
+
+  {{> favicon}}
+</body>
+
+<template name="favicon">
+  <p>Enter the URL to fetch the favicon, <b>please enter the url preceded by http://</b></p>
+  <form>
+      <input type="text" name="url"> 
+      <input type="submit" value="Get Favicon">
+  </form>
+  {{#if url}}
+  <p>The url favicon is located at {{url}} </p>
+  <img src="{{url}}" height="36" width="36">
+  {{/if}}
+</template>
+
+
