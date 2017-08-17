@@ -10,7 +10,8 @@ Meteor.methods({
     check(url, String)
     try {
       const result = HTTP.call('POST', "http://FavIcon-env.mcugg3rp3d.us-west-2.elasticbeanstalk.com/get-favicon", { data: { url: url }})
-      return result.text
+      console.log("result in get favicon call", result)
+      return result.content
     } catch(e) {
       console.log('err in get favicon',e)
       throw new Error("Error fetching url:", url)
